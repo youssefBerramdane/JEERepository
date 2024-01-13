@@ -335,7 +335,7 @@ public class TransfertNationalApplication implements CommandLineRunner {
 		corsConfiguration.addAllowedOrigin("*");
 		corsConfiguration.addAllowedMethod("*");
 		corsConfiguration.addAllowedHeader("*");
-		//corsConfiguration.setExposedHeaders(List.of("x-auth-token"));
+		corsConfiguration.addExposedHeader("*");
 		UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**",corsConfiguration);
 		return source;
