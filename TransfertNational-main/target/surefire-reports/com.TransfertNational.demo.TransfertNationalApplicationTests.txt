@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.TransfertNational.demo.TransfertNationalApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.966 s - in com.TransfertNational.demo.TransfertNationalApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 63.451 s - in com.TransfertNational.demo.TransfertNationalApplicationTests

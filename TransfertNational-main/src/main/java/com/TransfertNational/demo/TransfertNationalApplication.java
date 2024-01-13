@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
@@ -315,16 +316,29 @@ public class TransfertNationalApplication implements CommandLineRunner {
 		transfert7.setTypeTransfert("GAB BOA");
 		transfertRepository.save(transfert7);
 	}
-	@Bean
+	/*@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.addAllowedOrigin("*");
+		corsConfiguration.addAllowedOrigin("https://banking-50249.web.app");
+
 		corsConfiguration.addAllowedHeader("*");
 		corsConfiguration.addAllowedMethod("*");
 		corsConfiguration.addExposedHeader("*");
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
+	}*/
+	@Bean
+	CorsConfigurationSource corsConfigurationSource(){
+		CorsConfiguration corsConfiguration=new CorsConfiguration();
+		corsConfiguration.addAllowedOrigin("*");
+		corsConfiguration.addAllowedMethod("*");
+		corsConfiguration.addAllowedHeader("*");
+		//corsConfiguration.setExposedHeaders(List.of("x-auth-token"));
+		UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**",corsConfiguration);
+		return source;
+
 	}
 }
