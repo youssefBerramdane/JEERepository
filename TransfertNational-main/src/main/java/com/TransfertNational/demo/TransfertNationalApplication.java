@@ -330,9 +330,9 @@ public class TransfertNationalApplication implements CommandLineRunner {
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}*/
 	@Bean
-	CorsConfigurationSource corsConfigurationSource(){
+	public CorsConfigurationSource corsConfigurationSource(){
 		CorsConfiguration corsConfiguration=new CorsConfiguration();
-		corsConfiguration.addAllowedOrigin("*");
+		corsConfiguration.addAllowedOrigin("https://banking-50249.web.app/**");
 		corsConfiguration.addAllowedMethod("*");
 		corsConfiguration.addAllowedHeader("*");
 		corsConfiguration.addExposedHeader("*");
