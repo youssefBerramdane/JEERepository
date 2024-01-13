@@ -13,6 +13,7 @@ import java.io.Reader;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/uploadClientBeneficaire")
 public class UploadClientsBenificaires {
 
